@@ -1,1 +1,8 @@
-<div id="main"></div>
+<div id="main">
+
+<% if session[:id] %>
+<a href="/logout">ログアウト</a>
+<% else %>
+<a href="/auth/twitter">Twitterログイン</a>
+<% end %>
+</div>

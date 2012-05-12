@@ -12,7 +12,7 @@ init:(renders) ->
   e2 = ""
   for key, val of @conf['pages']
     e2 += @div({id:key},"now loading..")
-  $('body').html(tabs + e2)
+  $('body').prepend(tabs + e2)
   renders()
   @initImgHover()
 
