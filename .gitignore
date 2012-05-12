@@ -1,0 +1,15 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+config/database.yml
+node_modules
+npm-debug.log
+.nvm
+public/assets/*
+public/sizhi.appcache
+app/assets/javascripts/cache-version.js
+*.swp
+*.swo
+app/models/mixi_info.rb
