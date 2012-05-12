@@ -28,7 +28,7 @@ window.renders = () ->
     e += "</td></tr>"
   e += "</table>"
   e += "「キャンセル」を押すと今日の分の「完了」を取り消します"
-  e += "<div class=\"submit\"><a href=\"#\" id=\"do_updt_hopes\" align=\"center\"/><img src=\"/assets/sp/submit.png\" /></a></div>"
+  e += "<div class=\"submit\"><a href=\"#\" id=\"do_updt_hopes\" align=\"center\"><img src=\"/assets/sp/submit.png\" /></a></div>"
   e += """<table id="chars">
   <tr>
   <td><img src=\"/assets/sp/cha_1.png\" /></td>
