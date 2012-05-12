@@ -7,6 +7,7 @@ Macaronipad::Application.routes.draw do
   scope 'api' do
     match 'hopes/updt' => 'hopes#updt'
     match 'updt_last_tab' => 'api#updt_last_tab'
+    match 'hopes' => 'hopes#viewer'
   end
 
 end

@@ -10,5 +10,7 @@ $(document).ready(() ->
       "help":[]
     }
   }
-  $p.init(renders)
+  $p.api('hopes', (data) ->
+    $p.init(renders)
+  )
 )

@@ -1,6 +1,6 @@
 # -*r coding: utf-8 -*-
 class Hope < ActiveRecord::Base
-  attr_accessible :date_on, :user_id, :hope_body_id
+  attr_accessible :number, :user_id, :hope_body_id
   belongs_to :hope_body
   def self.updt(data, user_id)
     res = true
