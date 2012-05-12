@@ -11,11 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120512060350) do
+ActiveRecord::Schema.define(:version => 20120512130706) do
+
+  create_table "hope_bodies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "hope_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "body"
+  end
+
+  create_table "hope_dailies", :force => true do |t|
+    t.date    "date_on"
+    t.integer "hope_id"
+    t.boolean "is_done"
+  end
 
   create_table "hopes", :force => true do |t|
     t.string   "user_id"
-    t.date     "date_on"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "number"
+    t.integer  "hope_body_id"
+  end
+
+  create_table "log_access_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "access",     :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "log_accesses", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "tab"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -46,18 +75,16 @@ ActiveRecord::Schema.define(:version => 20120512060350) do
     t.integer  "user_id"
   end
 
-  create_table "user_hopes", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "hope_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.boolean  "is_done"
+  create_table "user_dailies", :force => true do |t|
+    t.date    "date_on"
+    t.integer "done_n"
   end
 
   create_table "users", :force => true do |t|
     t.integer  "twitter_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "max_combo"
   end
 
 end

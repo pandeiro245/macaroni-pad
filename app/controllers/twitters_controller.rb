@@ -5,7 +5,8 @@ class TwittersController < ApplicationController
     session[:oauth] = @auth[:credentials]
     session[:twitter_id] = @auth[:uid]
     twitter = Twitter.updt_via_auth(@auth)
-    session[:twitter_id]  = twitter.user_id if twitter
+    session[:id]  = twitter.user_id
+    session[:twitter_id]  = twitter.id
     redirect_to '/'
   end
 
