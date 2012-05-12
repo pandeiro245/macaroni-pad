@@ -2,7 +2,7 @@ window.renders = () ->
   e = ""
   e += $p.heading(1,"0日連続達成中")
   for i in [1..5]
-    e += "#{i}:<input type=\"text\" /><a href=\"#\">できた！</a><br />"
+    e += "<img src=\"/assets/sp/star_#{i}.jpg\" /><input type=\"text\" /><a href=\"#\">できた！</a><br />"
   $('#index').html(e)
 
   e = ""
@@ -13,8 +13,11 @@ window.renders = () ->
   e = ""
   e += $p.heading(1,"設定")
   for i in [1..5]
-    e += "#{i}:<input type=\"text\" id=\"updt_hope_#{i}\" /><br />"
+    e += "<img src=\"/assets/sp/star_#{i}.jpg\" /><input type=\"text\" id=\"updt_hope_#{i}\" /><br />"
   e += "<input type=\"submit\" value=\"保存\" id=\"do_updt_hopes\"/><br />"
+  e += $p.div({id:"cha_1"}, "<img src=\"/assets/sp/cha_1.png\" />")
+  e += $p.div({id:"cha_2"}, "<img src=\"/assets/sp/cha_2.png\" />")
+
   $('#setting').html(e)
 
 
