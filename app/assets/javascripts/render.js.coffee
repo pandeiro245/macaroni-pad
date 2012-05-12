@@ -25,8 +25,9 @@ window.renders = () ->
       else
         ''
     }\"/>"
-    e += "<a href=\"##{i}\" class=\"do_cancel_hope_daily\">今日の「完了」をキャンセル</a>" if typeof($p.data['hopes']['hope_dailies'][i]) != 'undefined' and $p.data['hopes']['hope_dailies'][i] == true
+    e += "<a href=\"##{i}\" class=\"do_cancel_hope_daily\">キャンセル</a>" if typeof($p.data['hopes']['hope_dailies'][i]) != 'undefined' and $p.data['hopes']['hope_dailies'][i] == true
     e += "<br />"
+  e += "「キャンセル」を押すと今日の分の「完了」を取り消します"
   e += "<input type=\"submit\" value=\"保存\" id=\"do_updt_hopes\"/><br /><br />"
   e += $p.div({id:"chars"}, """#{
     $p.div({id:"cha_1"}, "<img src=\"/assets/sp/cha_1.png\" />") +
