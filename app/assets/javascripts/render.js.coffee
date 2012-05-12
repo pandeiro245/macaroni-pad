@@ -7,11 +7,9 @@ window.renders = () ->
   $('#index').html(e)
 
   e = ""
-  e += $p.heading(1,"ツイッター")
-  e += '''<a href="https://twitter.com/intent/tweet?button_hashtag=macaroni_pad" class="twitter-hashtag-button" data-lang="ja" data-related="pandeiro245">Tweet #macaroni_pad</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>'''
+  e += $p.heading(1,'<img src="/assets/sp/twitter.png" />')
 
-  e += '<br /><a href="/logout">ログアウト</a>'
+  e += '<div class="center"><a href="/logout"><img src="/assets/sp/logout.png" /></a></div>'
 
   $('#friends').html(e)
 
@@ -44,7 +42,7 @@ window.renders = () ->
 
 
   e = ""
-  e += $p.heading(1,"マカロニパッド？")
+  e += $p.heading(1,'<img src="/assets/sp/help.png" />')
   e += $p.p({},"""マカロニパッドは
  「一日の終わりを 楽しくする」
   為に作られた習慣タスク管理ツールです。
@@ -93,6 +91,17 @@ window.renderNohope = () ->
     </div>
 
   '''
+
+window.renderLogin = () ->
+  e = '''
+    <div id="login">
+      <img src="/assets/sp/logo.png" />
+      <a href="/auth/twitter"><img src="/assets/sp/login.png" /></a>
+    </div>
+
+  '''
+  $('body').html(e)
+
 
 
 

@@ -79,6 +79,7 @@ body{
     input{
       font-size:23px;
       background:#fff0f0;
+      width:100%;
     }
     div.text{
       margin-top:8px;
@@ -89,10 +90,9 @@ body{
       float:left;
     }
   }
-  img.cancel{
-    opacity:0.8;
+  td a.do_cancel_hope_daily img{
+    width:110px;
   }
-  
   .submit{
     margin-top:60px;
     width:100%;
@@ -112,4 +112,50 @@ body{
   }
 }
 
+#friends{
+  h1{
+    width:100%;
+    text-align:center;
+    img{
+      height:130px;
+    }
+  }
+  .center{
+    width:100%;
+    text-align:center;
+    a{
+      margin-right:5px;
+    }
+  }
+}
 
+#help{
+  h1{
+    width:100%;
+    text-align:center;
+    img{
+      height:130px;
+    }
+  }
+  p{
+    opacity:0.8;
+    margin:30px;
+    background:#fff;
+    border:none;
+    border-radius: 40px 40px 40px 40px;
+    padding:30px;
+    vertical-align:middle;
+    font-size:40px;
+  }
+}
+
+
+
+#login{
+  margin:30px;
+  text-align:center;
+  a{
+    display:block;
+  }
+
+}

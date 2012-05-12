@@ -1,1 +1,9 @@
 <div id="main"></div>
+
+<script>
+<% if session[:id] %>
+  window.viewer_status = "login"
+<% else %>
+  window.viewer_status = "logout"
+<% end %>
+</script>
