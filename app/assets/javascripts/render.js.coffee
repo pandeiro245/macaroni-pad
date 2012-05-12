@@ -7,8 +7,6 @@ window.renders = () ->
   else
     e = renderIndex()
 
-
-
   $('#index').html(e)
 
   e = ""
@@ -99,8 +97,11 @@ window.renderNohope = () ->
 window.renderDoneHope = () ->
   e = '''
     <div id="done_hope">
+      <div>
       今日の目標達成！<br />
       今日はゆっくり休んで明日に備えてね☆
+      </div>
+      <img src="/assets/sp/cha_5.png" class="cha" />
     </div>
 
   '''

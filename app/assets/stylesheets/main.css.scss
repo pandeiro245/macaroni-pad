@@ -151,7 +151,7 @@ body{
 
 
 
-#login{
+#login, #done_hope{
   margin:30px;
   text-align:center;
   a{
@@ -160,5 +160,16 @@ body{
   .cha{
     width:250px;
   }
-
 }
+
+#done_hope div{
+  opacity:0.8;
+  margin:30px;
+  background:#fff;
+  border:none;
+  border-radius: 40px 40px 40px 40px;
+  padding:30px;
+  vertical-align:middle;
+  font-size:40px;
+}
+
