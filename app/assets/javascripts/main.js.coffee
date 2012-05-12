@@ -6,7 +6,7 @@ $(document).ready(() ->
     pages:{
       "index":[],
       "setting":[],
-      "messages":[],
+      "friends":[],
       "help":[]
     }
   }
