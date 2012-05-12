@@ -2,8 +2,13 @@ window.renders = () ->
   #e += $p.heading(1,"0日連続達成中")
   if typeof($p.data['hopes']['hopes'][1]) == 'undefined'
     e = renderNohope()
+  else if  isDone()
+    e = renderDoneHope()
   else
     e = renderIndex()
+
+
+
   $('#index').html(e)
 
   e = ""
@@ -91,6 +96,14 @@ window.renderNohope = () ->
     </div>
 
   '''
+window.renderDoneHope = () ->
+  e = '''
+    <div id="done_hope">
+      今日の目標達成！<br />
+      今日はゆっくり休んで明日に備えてね☆
+    </div>
+
+  '''
 
 window.renderLogin = () ->
   e = '''
@@ -102,8 +115,4 @@ window.renderLogin = () ->
 
   '''
   $('body').html(e)
-
-
-
-
 

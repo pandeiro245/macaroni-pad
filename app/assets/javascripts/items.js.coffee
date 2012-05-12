@@ -1,3 +1,13 @@
+window.isDone = () ->
+  res = true
+  for key, val of $p.data['hopes']['hopes']
+    if typeof($p.data['hopes']['hope_dailies'][key]) == 'undefined' or $p.data['hopes']['hope_dailies'][key] == false
+      res = false
+  res
+
+
+
+
 window.prepareUpdtHope = () ->
   $("#do_updt_hopes").click(() ->
     data = {}
