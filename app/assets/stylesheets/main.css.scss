@@ -50,10 +50,10 @@ body{
     margin:10px;
     background:#fff;
     border:none;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 40px 40px 40px 40px;
     padding:10px;
     vertical-align:middle;
-    font-size:23px;
+    font-size:70px;
   }
 }
 
@@ -62,30 +62,51 @@ body{
     width:100%;
     text-align:center;
   }
-
-  input.inputs{
+  table{
+    width:100%;
+    tr{
+      width:100%;
+    }
+  }
+  td.item{
+    opacity:0.8;
     margin:10px;
-    height:50px;
-    width:80%;
     background:#fff;
     border:none;
-    border-radius: 3px 3px 3px 3px;
-    opacity: 0.5;
+    border-radius: 20px 20px 20px 20px;
+    padding:10px;
+    vertical-align:middle;
+    input{
+      font-size:23px;
+      background:#fff0f0;
+    }
+    div.text{
+      margin-top:8px;
+      float:left;
+      width:80%;
+    }
+    img{
+      float:left;
+    }
   }
-
+  img.cancel{
+    opacity:0.8;
+  }
+  
+  .submit{
+    margin-top:60px;
+    width:100%;
+    text-align:center;
+  }
 
   #chars{
     width:100%;
-    #cha_1{
-      float:left;
-      img{
-        width:37%;
-      }
-    }
-    #cha_2{
-      float:right;
-      img{
-        width:37%;
+    tr{
+      td{
+        width:32%;
+        img{
+          width:100%;
+        }
       }
     }
   }

@@ -17,23 +17,28 @@ window.renders = () ->
 
   e = ""
   e += $p.heading(1, '<img src="/assets/sp/h_setting.png" />')
-  e += "<div class=\"inputs\">"
+  e += "<table>"
   for i in [1..5]
-    e += "<img src=\"/assets/sp/star_#{i}.png\" /><input type=\"text\" id=\"updt_hope_#{i}\" value=\"#{
+    e += '<tr><td class=\"item\">'
+    e += "<img src=\"/assets/sp/star_#{i}.png\" /><div class=\"text\"><input type=\"text\" id=\"updt_hope_#{i}\" value=\"#{
       if typeof($p.data['hopes']['hopes'][i]) != 'undefined'
         $p.data['hopes']['hopes'][i]
       else
         ''
-    }\"/>"
-    e += "<a href=\"##{i}\" class=\"do_cancel_hope_daily\">キャンセル</a>" if typeof($p.data['hopes']['hope_dailies'][i]) != 'undefined' and $p.data['hopes']['hope_dailies'][i] == true
-    e += "<br />"
-  e += "</div>"
+    }\"/></div></td><td>"
+    e += "<a href=\"##{i}\" class=\"do_cancel_hope_daily\"><img src=\"/assets/sp/cancel.png\" /></a>" if typeof($p.data['hopes']['hope_dailies'][i]) != 'undefined' and $p.data['hopes']['hope_dailies'][i] == true
+    e += "</td></tr>"
+  e += "</table>"
   e += "「キャンセル」を押すと今日の分の「完了」を取り消します"
-  e += "<input type=\"submit\" value=\"保存\" id=\"do_updt_hopes\"/><br /><br />"
-  e += $p.div({id:"chars"}, """#{
-    $p.div({id:"cha_1"}, "<img src=\"/assets/sp/cha_1.png\" />") +
-    $p.div({id:"cha_2"}, "<img src=\"/assets/sp/cha_2.png\" />")
-  }""")
+  e += "<div class=\"submit\"><a href=\"#\" id=\"do_updt_hopes\" align=\"center\"/><img src=\"/assets/sp/submit.png\" /></a></div>"
+  e += """<table id="chars">
+  <tr>
+  <td><img src=\"/assets/sp/cha_1.png\" /></td>
+  <td>頑張って！！</td>
+  <td><img src=\"/assets/sp/cha_2.png\" /></td>
+  </tr>
+  </table>
+  """
 
   $('#setting').html(e)
 
