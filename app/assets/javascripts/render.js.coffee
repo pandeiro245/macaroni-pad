@@ -97,6 +97,7 @@ window.renderLogin = () ->
     <div id="login">
       <img src="/assets/sp/logo.png" />
       <a href="/auth/twitter"><img src="/assets/sp/login.png" /></a>
+      <img src="/assets/sp/cha_3.png" class="cha" />
     </div>
 
   '''
