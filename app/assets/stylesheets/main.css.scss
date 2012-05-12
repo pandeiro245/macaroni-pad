@@ -17,19 +17,21 @@ body{
 }
 
 #setting{
-  #cha_1{
-    float:left;
-    img{
-      width:300px;
+  #chars{
+    width:100%;
+    #cha_1{
+      float:left;
+      img{
+        width:37%;
+      }
+    }
+    #cha_2{
+      float:right;
+      img{
+        width:37%;
+      }
     }
   }
-  #cha_2{
-    float:right;
-    img{
-      width:300px;
-    }
-  }
-
 }
 
 

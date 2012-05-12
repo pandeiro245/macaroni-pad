@@ -12,5 +12,6 @@ $(document).ready(() ->
   }
   $p.api('hopes', (data) ->
     $p.init(renders)
+
   )
 )

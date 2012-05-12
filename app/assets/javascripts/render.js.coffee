@@ -1,8 +1,14 @@
 window.renders = () ->
   e = ""
   e += $p.heading(1,"0日連続達成中")
-  for i in [1..5]
-    e += "<img src=\"/assets/sp/star_#{i}.png\" /><input type=\"text\" /><a href=\"#\">できた！</a><br />"
+  for i, val of $p.data['hopes']['hopes']
+    if typeof($p.data['hopes']['hope_dailies'][i]) == 'undefined' or $p.data['hopes']['hope_dailies'][i] == false
+      e += "<img src=\"/assets/sp/star_#{i}.png\" />#{
+        if typeof($p.data['hopes']['hopes'][i]) != 'undefined'
+          $p.data['hopes']['hopes'][i]
+        else
+          ''
+      }<a href=\"##{i}\" class=\"do_done_hope_daily\">できた！</a><br />"
   $('#index').html(e)
 
   e = ""
@@ -18,35 +24,38 @@ window.renders = () ->
         $p.data['hopes']['hopes'][i]
       else
         ''
-    }\"/><br />"
-  e += "<input type=\"submit\" value=\"保存\" id=\"do_updt_hopes\"/><br />"
-  e += $p.div({id:"cha_1"}, "<img src=\"/assets/sp/cha_1.png\" />")
-  e += $p.div({id:"cha_2"}, "<img src=\"/assets/sp/cha_2.png\" />")
+    }\"/>"
+    e += "<a href=\"##{i}\" class=\"do_cancel_hope_daily\">今日の「完了」をキャンセル</a>" if typeof($p.data['hopes']['hope_dailies'][i]) != 'undefined' and $p.data['hopes']['hope_dailies'][i] == true
+    e += "<br />"
+  e += "<input type=\"submit\" value=\"保存\" id=\"do_updt_hopes\"/><br /><br />"
+  e += $p.div({id:"chars"}, """#{
+    $p.div({id:"cha_1"}, "<img src=\"/assets/sp/cha_1.png\" />") +
+    $p.div({id:"cha_2"}, "<img src=\"/assets/sp/cha_2.png\" />")
+  }""")
 
   $('#setting').html(e)
 
 
   e = ""
   e += $p.heading(1,"マカロニパッド？")
-  e += """マカロニパッドは
+  e += $p.p({},"""マカロニパッドは
  「一日の終わりを 楽しくする」
-  為に作られたタスク管理ツールです。
+  為に作られた習慣タスク管理ツールです。
 
  「英語を5分だけ勉強する」
  「誰かに感謝の気持ちを伝える」
-  など、毎日簡単に続けられそうな
+  など、毎日無理なく続けられそうな
   目標を最大5個まで登録しておくと
   それらをワンクリックで管理できます。
 
   全て完了にすると野菜の妖精が
   お祝いしてくれます。
-  """
-
-  e += $p.heading(2,"毎日やることを登録しよう")
-  e += """「一日の終わりを楽しくする」をテーマに
-  2012年5月12日にマカロニパッドは産まれました"""
-
+  一日の終わりにちょっとした達成感を
+  味わいながら、明日に備えて
+  ゆっくりお休みくださいませ。
+  """)
   $('#help').html(e)
 
   prepareUpdtHope()
-
+  prepareDoneHopeDaily()
+  prepareCancelHopeDaily()
