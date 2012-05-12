@@ -5,8 +5,8 @@ $(document).ready(() ->
   $p.conf = {
     pages:{
       "index":[],
-      "detail":[],
       "messages":[],
+      "setting":[],
       "help":[]
     }
   }

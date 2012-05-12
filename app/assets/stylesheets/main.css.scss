@@ -1,4 +1,14 @@
-#help, #detail, #messages{
+*{
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+#tabs a img{
+  width:25%;
+}
+
+#help, #setting, #messages{
   display:none;
 }
 
