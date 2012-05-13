@@ -9,11 +9,7 @@ window.renders = () ->
 
   $('#index').html(e)
 
-  e = ""
-  e += $p.heading(1,'<img src="/assets/sp/twitter.png" />')
-
-  e += '<div class="center"><a href="/logout"><img src="/assets/sp/logout.png" /></a></div>'
-
+  e = renderFriends()
   $('#friends').html(e)
 
   e = ""
@@ -42,8 +38,39 @@ window.renders = () ->
   """
 
   $('#setting').html(e)
+  
+  e = renderHelp()
+  $('#help').html(e)
+
+  prepareUpdtHope()
+  prepareDoneHopeDaily()
+  prepareCancelHopeDaily()
+
+window.renderIndex = () ->
+  e = ""
+  e += '<table>'
+  for i, val of $p.data['hopes']['hopes']
+    if typeof($p.data['hopes']['hope_dailies'][i]) == 'undefined' or $p.data['hopes']['hope_dailies'][i] == false
+      e += '<tr><td class=\"item\">'
+      e += "<img src=\"/assets/sp/star_#{i}.png\" /><div class=\"text\">#{
+        if typeof($p.data['hopes']['hopes'][i]) != 'undefined'
+          $p.data['hopes']['hopes'][i]
+        else
+          ''
+      }</div></td><td><a href=\"##{i}\" class=\"do_done_hope_daily\"><img src=\"/assets/sp/done.png\" class=\"done\" /></a></td></tr>"
+  e += '</table>'
+  e
 
 
+window.renderFriends = () ->
+  e = ""
+  e += $p.heading(1,'<img src="/assets/sp/twitter.png" />')
+  e += '<div><a href="/logout"><img src="/assets/sp/logout.png" /></a>'
+  e += '<img src="/assets/sp/cha_7.png" class="cha" />'
+  e
+
+
+window.renderHelp = () ->
   e = ""
   e += $p.heading(1,'<img src="/assets/sp/help.png" />')
   e += $p.p({},"""マカロニパッドは
@@ -61,31 +88,12 @@ window.renders = () ->
   一日の終わりにちょっとした達成感を
   味わいながら、明日に備えて
   ゆっくりお休みくださいませ。
-  """)
-  $('#help').html(e)
+  """) + '<img src="/assets/sp/cha_8.png" class="cha" />'
 
-  prepareUpdtHope()
-  prepareDoneHopeDaily()
-  prepareCancelHopeDaily()
-
-
-
-
-
-window.renderIndex = () ->
-  e = ""
-  e += '<table>'
-  for i, val of $p.data['hopes']['hopes']
-    if typeof($p.data['hopes']['hope_dailies'][i]) == 'undefined' or $p.data['hopes']['hope_dailies'][i] == false
-      e += '<tr><td class=\"item\">'
-      e += "<img src=\"/assets/sp/star_#{i}.png\" /><div class=\"text\">#{
-        if typeof($p.data['hopes']['hopes'][i]) != 'undefined'
-          $p.data['hopes']['hopes'][i]
-        else
-          ''
-      }</div></td><td><a href=\"##{i}\" class=\"do_done_hope_daily\"><img src=\"/assets/sp/done.png\" class=\"done\" /></a></td></tr>"
-  e += '</table>'
   e
+
+
+
 
 window.renderNohope = () ->
   e = '''

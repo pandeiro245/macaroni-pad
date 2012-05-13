@@ -126,21 +126,11 @@ body{
       height:130px;
     }
   }
-  p{
-    opacity:0.8;
-    margin:30px;
-    background:#fff;
-    border:none;
-    border-radius: 40px 40px 40px 40px;
-    padding:30px;
-    vertical-align:middle;
-    font-size:40px;
-  }
 }
 
 
 
-#login, #done_hope, #nohope{
+#login, #done_hope, #nohope, #friends, #help{
   margin:30px;
   text-align:center;
   a{
@@ -151,7 +141,7 @@ body{
   }
 }
 
-#done_hope div, #nohope div{
+#done_hope div, #nohope div, #help p{
   opacity:0.8;
   margin:30px;
   background:#fff;
