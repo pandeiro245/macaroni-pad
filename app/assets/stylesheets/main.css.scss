@@ -44,17 +44,6 @@ body{
   img.done{
     opacity:0.8;
   }
-
-  #nohope{
-    opacity:0.8;
-    margin:10px;
-    background:#fff;
-    border:none;
-    border-radius: 40px 40px 40px 40px;
-    padding:10px;
-    vertical-align:middle;
-    font-size:70px;
-  }
 }
 
 #setting{
@@ -151,7 +140,7 @@ body{
 
 
 
-#login, #done_hope{
+#login, #done_hope, #nohope{
   margin:30px;
   text-align:center;
   a{
@@ -162,7 +151,7 @@ body{
   }
 }
 
-#done_hope div{
+#done_hope div, #nohope div{
   opacity:0.8;
   margin:30px;
   background:#fff;

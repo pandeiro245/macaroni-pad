@@ -90,7 +90,10 @@ window.renderIndex = () ->
 window.renderNohope = () ->
   e = '''
     <div id="nohope">
+      <div>
       目標を１つ以上登録してね☆
+      </div>
+      <img src="/assets/sp/cha_6.png" class="cha" />
     </div>
 
   '''
