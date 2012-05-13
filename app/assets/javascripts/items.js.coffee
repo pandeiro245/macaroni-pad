@@ -5,9 +5,6 @@ window.isDone = () ->
       res = false
   res
 
-
-
-
 window.prepareUpdtHope = () ->
   $("#do_updt_hopes").click(() ->
     data = {}

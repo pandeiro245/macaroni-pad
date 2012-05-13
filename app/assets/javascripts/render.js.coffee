@@ -47,10 +47,12 @@ window.renders = () ->
   prepareCancelHopeDaily()
 
 window.renderIndex = () ->
-  e = ""
+  nokori = 0
+  e = ''
   e += '<table>'
   for i, val of $p.data['hopes']['hopes']
     if typeof($p.data['hopes']['hope_dailies'][i]) == 'undefined' or $p.data['hopes']['hope_dailies'][i] == false
+      nokori = nokori + 1
       e += '<tr><td class=\"item\">'
       e += "<img src=\"/assets/sp/star_#{i}.png\" /><div class=\"text\">#{
         if typeof($p.data['hopes']['hopes'][i]) != 'undefined'
@@ -59,6 +61,8 @@ window.renderIndex = () ->
           ''
       }</div></td><td><a href=\"##{i}\" class=\"do_done_hope_daily\"><img src=\"/assets/sp/done.png\" class=\"done\" /></a></td></tr>"
   e += '</table>'
+  e +='<img src="/assets/sp/cha_6.png" class="cha" />'
+  e = "<h1 class=\"index\">あと#{nokori}</span>個で目標達成だよ☆</h1>" + e
   e
 
 
