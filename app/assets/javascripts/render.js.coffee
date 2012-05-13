@@ -31,7 +31,7 @@ window.renders = () ->
   e += """<table id="chars">
   <tr>
   <td><img src=\"/assets/sp/cha_1.png\" /></td>
-  <td>頑張って！！</td>
+  <td><img src=\"/assets/sp/settiing_bottom.png\" /></td>
   <td><img src=\"/assets/sp/cha_2.png\" /></td>
   </tr>
   </table>
@@ -113,6 +113,7 @@ window.renderDoneHope = () ->
   e = '''
     <div id="done_hope">
       <div>
+      おめでとう！<br />
       今日の目標達成！<br />
       今日はゆっくり休んで明日に備えてね☆
       </div>
