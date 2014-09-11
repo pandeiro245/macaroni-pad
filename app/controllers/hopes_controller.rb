@@ -11,7 +11,7 @@ class HopesController < ApplicationController
     end
     hopes.each do |i|
       hd = HopeDaily.where(
-        :date_on => Time.now,
+        :date_on => Time.now.to_date,
         :hope_id => i.id,
         :is_done => true
       )
@@ -29,4 +29,26 @@ class HopesController < ApplicationController
     end
     render :json => @res
   end
+
+
+  def done_daily
+    @res = {}
+    if HopeDaily.updt('done', params, session[:id])
+      @res['msg'] = "完了させました！"
+    else
+      @res['msg'] = "システムエラーが発生しました"
+    end
+    render :json => @res
+  end
+
+  def cancel_daily
+    @res = {}
+    if HopeDaily.updt('cancel', params, session[:id])
+      @res['msg'] = "完了を復帰させました"
+    else
+      @res['msg'] = "システムエラーが発生しました"
+    end
+    render :json => @res
+  end
+
 end

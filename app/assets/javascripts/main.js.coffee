@@ -1,5 +1,3 @@
-window.mp ={
-}
 
 $(document).ready(() ->
   $p.conf = {
@@ -10,7 +8,10 @@ $(document).ready(() ->
       "help":[]
     }
   }
-  $p.api('hopes', (data) ->
-    $p.init(renders)
-  )
+  if viewer_status == "login"
+    $p.api('hopes', (data) ->
+      $p.init(renders)
+    )
+  else
+    renderLogin()
 )

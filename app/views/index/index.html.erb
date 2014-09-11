@@ -1,8 +1,9 @@
-<div id="main">
+<div id="main"></div>
 
-<% if session[:twitter_id] %>
-<a href="/logout">ログアウト</a>
+<script>
+<% if session[:id] %>
+  window.viewer_status = "login"
 <% else %>
-<a href="/auth/twitter">Twitterログイン</a>
+  window.viewer_status = "logout"
 <% end %>
-</div>
+</script>

@@ -16,24 +16,161 @@ body{
   display:none;
 }
 
+#index{
+  h1.index{
+    opacity:0.8;
+    margin:10px;
+    background:#fff;
+    border:none;
+    border-radius: 20px 20px 20px 20px;
+    padding:10px;
+    vertical-align:middle;
+    font-size:23px;
+
+  }
+  table{
+    width:100%;
+    tr{
+      width:100%;
+    }
+  }
+  td.item{
+    opacity:0.8;
+    margin:10px;
+    background:#fff;
+    border:none;
+    border-radius: 20px 20px 20px 20px;
+    padding:10px;
+    vertical-align:middle;
+    font-size:23px;
+    div.text{
+      margin-top:8px;
+      float:left;
+    }
+    img{
+      float:left;
+    }
+  }
+
+  img.done{
+    opacity:0.8;
+  }
+}
+
 #setting{
-  #cha_1{
-    float:left;
-    img{
-      width:300px;
+  h1{
+    width:100%;
+    text-align:center;
+  }
+  table{
+    width:100%;
+    tr{
+      width:100%;
     }
   }
-  #cha_2{
-    float:right;
-    img{
-      width:300px;
+  td.item{
+    opacity:0.8;
+    margin:10px;
+    background:#fff;
+    border:none;
+    border-radius: 20px 20px 20px 20px;
+    padding:10px;
+    vertical-align:middle;
+    input{
+      font-size:23px;
+      background:#fff0f0;
+      width:100%;
     }
+    div.text{
+      margin-top:8px;
+      float:left;
+      width:80%;
+    }
+    img{
+      float:left;
+    }
+  }
+  td a.do_cancel_hope_daily img{
+    width:110px;
+  }
+  .submit{
+    margin-top:60px;
+    width:100%;
+    text-align:center;
   }
 
+  #chars{
+    width:100%;
+    tr{
+      td{
+        width:32%;
+        img{
+          width:300px;
+        }
+      }
+    }
+  }
+}
+
+#friends{
+  h1{
+    width:100%;
+    text-align:center;
+    img{
+      height:130px;
+    }
+  }
+  .center{
+    width:100%;
+    text-align:center;
+    a{
+      margin-right:5px;
+    }
+  }
+}
+
+#help{
+  h1{
+    width:100%;
+    text-align:center;
+    img{
+      height:130px;
+    }
+  }
 }
 
 
-input{
+
+#login, #done_hope, #nohope, #friends, #help, #index{
+  margin:30px;
+  text-align:center;
+  a{
+    display:block;
+  }
+}
+
+
+#login, #nohope, #friends, #help, #index{
+  .cha{
+    width:250px;
+  }
+}
+
+#done_hope{
+  .cha{
+    width:350px;
+  }
+}
+
+
+#done_hope div, #nohope div, #help p{
+  opacity:0.8;
+  margin:30px;
+  background:#fff;
   border:none;
-  background:#ccc;
+  border-radius: 40px 40px 40px 40px;
+  padding:30px;
+  vertical-align:middle;
+  font-size:40px;
 }
+
