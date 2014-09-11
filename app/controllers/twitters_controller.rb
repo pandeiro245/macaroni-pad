@@ -12,6 +12,7 @@ class TwittersController < ApplicationController
 
   def logout
     session.destroy
+    session = nil
     redirect_to '/'
   end
 end
